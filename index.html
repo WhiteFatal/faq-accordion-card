@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *, *::after, *::before {
+      box-sizing: border-box;
+    }
+    :root {
+      --soft-violet: hsl(273, 75%, 66%); /* background gradient */
+      --soft-blue: hsl(240, 73%, 65%); /* background gradient */
+      --desaturated-blue: hsl(238, 29%, 16%); /* text */
+      --soft-red: hsl(14, 88%, 65%); /* text */
+      --Very-dark-grayish-blue: hsl(237, 12%, 33%); /* text */
+      --grayish-blue: hsl(240, 6%, 50%); /* text */
+      --background-white: hsl(240, 5%, 91%); /* Dividers */
+    }
+
+    body {
+      background: linear-gradient(var(--soft-violet), var(--soft-blue));
+      background-repeat: no-repeat;
+      margin: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Kumbh Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    main {
+      background-color: white;
+      width: 58rem;
+      padding: 2rem 6rem 5rem 6rem;
+      border-radius: 1.5rem;
+      display: flex;
+      background-image: url('./images/illustration-woman-online-desktop.svg'), url('./images/bg-pattern-desktop.svg');
+      background-position: -5rem 1rem, -36rem -19rem;
+      background-repeat: no-repeat no-repeat;
+    }
+    .img-container {
+      width: 50%;
+      position: relative;    
+    }
+    .box-img {
+      width: 50%;
+      position: absolute;
+      top: 31%;
+      left: -50%;
+    }
+    .woman-img {
+      display: none;
+    }
+    .info-container {
+      width: 50%;
+      color: var(--desaturated-blue);
+    }
+    h1 {
+      margin: 1.5rem 0 1.5rem 0; padding: 0;
+    }
+    .question {
+      margin: 0;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      cursor: pointer;
+      position: relative;
+    }
+    .question:hover {
+      color: var(--soft-red);
+    }
+    .arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+    .answer {
+      font-size: 0.8rem;
+      display: none;
+      border-bottom: solid 1px var(--background-white);
+      padding: 0 0 1rem 0;
+      margin: 0;
+    }
+  
+    .attribution { font-size: 11px; text-align: center; margin-top: 2rem; }
+    .attribution a { color: var(--soft-red); }
+
+    @media screen and (max-width: 800px) {
+      main {
+        background-image: url('./images/bg-pattern-mobile.svg');
+        background-position: center top;
+        background-repeat: no-repeat no-repeat;
+        width: 20rem;
+        flex-direction: column;
+        padding: 0 1rem 3rem 1rem;
+      }
+      h1 {
+        margin: 3.5rem 0 1.5rem 0; padding: 0;
+        text-align: center;
+      }
+      .info-container {
+        width: 100%;
+        color: var(--desaturated-blue);
+      }
+      .img-container {
+        width: 100%;
+        height: 5rem;
+        position: relative;    
+      }
+      .woman-img {
+        width: 80%;
+        display: flex;
+        position: absolute;
+        top: -130%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .box-img {
+        display: none;
+      }
+      .answer {
+      padding: 0 1rem 1rem 0;
+      margin: 0;
+    }
+
+  </style>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="img-container">
+      <img class="box-img" src="./images/illustration-box-desktop.svg" alt="">
+      <img class="woman-img" src="./images/illustration-woman-online-mobile.svg" alt="">
+    </div>
+    <div class="info-container">
+      <h1>FAQ</h1>
+      <p class="question q1">
+        How many team members can I invite?
+        <img class="arrow" src="./images/icon-arrow-down.svg" alt="" />
+      </p>
+      <p class="answer a1">You can invite up to 2 additional users on the Free plan. There is no limit on 
+      team members for the Premium plan.</p>
+      <p class="question q2">
+        What is the maximum file upload size?
+        <img class="arrow" src="./images/icon-arrow-down.svg" alt="" />
+      </p>
+      <p class="answer a2">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+      <p class="question q3">
+        How do I reset my password?
+        <img class="arrow" src="./images/icon-arrow-down.svg" alt="" />
+      </p>
+      <p class="answer a3">Click “Forgot password” from the login page or “Change password” from your profile page.
+      A reset link will be emailed to you.</p>
+      <p class="question q4">
+        Can I cancel my subscription?
+        <img class="arrow" src="./images/icon-arrow-down.svg" alt="" />
+      </p>
+      <p class="answer a4">Yes! Send us a message and we’ll process your request no questions asked.</p>
+      <p class="question q5">
+        Do you provide additional support?
+        <img class="arrow" src="./images/icon-arrow-down.svg" alt="" />
+      </p>
+      <p class="answer a5">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+    </div>  
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/WhiteFatal" target="_blank">Night</a>.
+    </div>
+  </footer>
+</body>
+</html>
